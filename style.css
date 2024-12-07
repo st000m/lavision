@@ -1,0 +1,1159 @@
+@import url('https://font.googleapis.com/css2?familyPoppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #ededed;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 30px 10% !important;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background-color: #200258;
+}
+
+
+.logo img {
+    width: 200px; /* Adjust the width as needed */
+    height: auto;
+    display: block;
+}
+
+.logo {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+
+.navbar a {
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: white;
+    font-size: 28px;
+}
+
+.burger-menu {
+    display: none;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+}
+
+@media (max-width: 1400px) {
+    .burger-menu {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 0; /* Commence sous le header */
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0;
+        z-index: 100; /* Sous le burger-menu et le logo */
+    }
+    
+    .navbar.active {
+        display: flex;
+    }
+    
+    .navbar::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 2px); /* Le flou prend toute la hauteur de la navbar mais s'arrête avant la barre bleue */
+        background: #200258(26, 25, 21, 0.8); /* Fond flou semi-transparent */
+        backdrop-filter: blur(10px); /* Application du flou */
+        z-index: -1; /* Place le flou derrière les liens de la navbar */
+    }
+    
+    .navbar a {
+        font-size: 22px;
+        color: #200258;
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+        color: #200258;
+        font-size: 28px;
+    }
+    
+    /* Augmenter la marge supérieure du premier lien */
+    .navbar a:first-child {
+        margin-top: 120px; /* Augmente cette valeur pour un espace supérieur plus grand */
+    }
+    
+    /* Ajouter un espace au dernier lien avant la barre bleue */
+    .navbar a:last-child {
+        margin-bottom: 30px; /* Ajuste cette valeur pour créer l'espace entre le dernier lien et la barre bleue */
+    }
+    
+    .navbar::after {
+        content: '';
+        position: absolute;
+        bottom: 0; /* Place la ligne juste en bas de la navbar */
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #200258; /* Couleur de la ligne bleue */
+        z-index: 150; /* La ligne est visible au-dessus du flou */
+    }
+
+    
+    .logo {
+        position: relative;
+        font-size: 30px;
+        color: #ededed;
+        text-decoration: none;
+        font-weight: 600;
+        z-index: 300; /* Le logo reste visible au-dessus du flou */
+    }
+
+    .logo img {
+        content: url('images/logoTEL.png'); /* Remplacer l'image par 'logoTEL.png' pour les petits écrans */
+        width: 90px; /* Ajuste la taille si nécessaire */
+        height: auto;
+    }
+    
+    .burger-menu {
+        display: block;
+        position: relative;
+        font-size: 30px;
+        color: #ededed;
+        cursor: pointer;
+        z-index: 300; /* Le burger-menu reste au-dessus du flou */
+    }
+
+    .body-faq {
+        background-color: white!important; /* Couleur de fond unie, avec !important pour forcer la priorité */
+        background-image: none !important; /* Supprime l'image de fond */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .home {
+        background-color: white !important; /* Couleur de fond unie, avec !important pour forcer la priorité */
+        background-image: none !important; /* Supprime l'image de fond */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .home-content, .home-sci {
+        position: relative;
+        z-index: 2;
+    }
+
+    .home-sci {
+        align-items: center;
+    }
+
+    .home-content {
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-content .home-image {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    .home-content h1 {
+        font-size: 32px;
+    }
+
+    .home-content h3 {
+        font-size: 24px;
+    }
+
+    .home-content p {
+        margin-top: 5rem;
+        font-size: 16px;
+    }
+
+    .question-box h3 {
+        font-size: 1rem !important;  /* Réduit la taille de la police */
+    }
+
+    .answer p {
+        font-size: 0.88rem !important;  /* Réduit la taille de la police */
+    }
+
+    .section-faq {
+        padding-bottom: 50px !important;     /* Ajoute un défilement vertical si le contenu dépasse */
+    }
+
+    .offres-container {
+        flex-direction: column  !important; /* Passe en colonne lorsque l'écran est très petit */
+        align-items: center !important; /* Centre les éléments verticalement */
+        gap: 30px  !important; /* Réduit l'espace entre les offres */
+    }
+
+    .offre {
+        width: 50% !important; /* Les offres prendront 45% de la largeur, donc deux offres sur une ligne */
+        margin-bottom: 30px !important; /* Ajoute un espace en bas des offres */
+    }
+}
+
+.home {
+    height: 100vh;
+    background: url(images/a.png) no-repeat; 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h1 {
+    position: relative;
+    font-size: 56px;
+    font-weight: 700;
+    color: black;
+    line-height: 1.2;
+    text-shadow: 0px  0px  10px   black,
+                 0px  0px  40px   black;
+}
+
+
+
+
+.home-content h3 {
+    margin-top: 2.5rem;
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    color: #200258;
+}
+
+
+
+.home-content p {
+    margin-top: 2rem;
+    position: relative;
+    font-size: 16px;
+    margin: 20px 0 30px;
+    color: black;
+}
+
+
+
+.home-content .btn-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
+
+
+
+/* Styles généraux pour les boutons */
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: white; /* Fond foncé par défaut */
+    border: 2px solid #200258; /* Contour bleu */
+    border-radius: 8px;
+    font-size: 19px;
+    color: #200258; /* Texte bleu */
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s; /* Transition douce pour tous les changements */
+}
+
+.btn-box a:hover {
+    color: white; /* Texte foncé au survol */
+    /* Contour bleu reste inchangé */
+}
+
+/* Optionnel : ajouter une animation au fond du bouton */
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #200258; /* Fond bleu clair */
+    z-index: -1;
+    transition:  .5s; /* Animation douce de l'élargissement */
+}
+
+/* Effet d'extension du fond bleu au survol */
+.btn-box a:hover::before {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+.home-content .btn-box2 {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
+
+.btn-box2 a {
+    margin-top: 30px;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 100%;
+    background: #200258;
+    border: 2px solid #200258;
+    border-radius: 8px;
+    font-size: 19px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transform: .5s;
+}
+
+.btn-box2 a:hover {
+    color: #200258;
+}
+
+.btn-box2 a:nth-child(2) {
+    background: transparent;
+    color: #200258;
+}
+
+.btn-box2 a:nth-child(2):hover {
+    color: white;
+}
+
+.btn-box2 a:nth-child(2)::before {
+    background: #200258;
+}
+
+.btn-box2 a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    transition: .7s;
+}
+
+.btn-box2 a:hover::before {
+    width: 100%;
+}
+
+
+.faq1{
+    max-width: 700px;
+    margin-top: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: box-shadow 0.3s ease-in-out;
+    margin-top: 40px;
+}
+
+
+
+.home-sci {
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #200258;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #200258;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.home-sci a:hover {
+    color: white;
+}
+
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #200258;
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+.home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 700px;
+    height: 100%;
+    background: transparent;
+    transition: 2.5s;
+    animation: maniActiveHover .1s forwards;
+    animation-delay: 4s;
+    pointer-events: none;
+}
+
+
+
+
+
+@keyframes showRight {
+    100%{
+        width: 0;
+    }
+}
+
+@keyframes manipActiveHover {
+    100% {
+        pointer-events: auto;
+    }
+}
+
+.body-faq {
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+.section-faq {
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;  /* Ajoute un peu d'espace en bas pour ne pas que le contenu soit collé au bas */
+}
+
+.faq {
+    max-width: 700px;
+    margin-top: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: box-shadow 0.3s ease-in-out; 
+}
+
+.faq:first-of-type {
+    margin-top: -4rem; /* Réduit l'écart entre le titre et la première box */
+}
+
+.question {
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 0; 
+}
+
+.question-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: white; 
+    border: 2px solid #200258;
+    border-radius: 8px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.question-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0; 
+    height: 100%;
+    background: #200258; 
+    z-index: -1; 
+    transition: width 0.5s ease; 
+}
+
+.question-box h3 {
+    font-size: 1.2rem;
+    color: #200258;
+    font-weight: 600;
+    margin: 0;
+    flex-grow: 1;
+    z-index: 1;
+}
+
+.question-box svg {
+    width: 20px;
+    height: auto;
+    stroke: #200258; /* Couleur par défaut (violet foncé) */
+    fill: none;      /* Assurez-vous que le remplissage est vide */
+    stroke-width: 7;
+    margin-left: 20px;
+    vertical-align: middle;
+    transition: transform 0.3s ease-in-out, stroke 0.3s ease-in-out;
+}
+
+.question-box:hover svg,
+.question-box.active svg { /* Changement au survol ou quand actif */
+    stroke: white; 
+}
+
+.question-box:hover {
+    background: white;
+}
+
+.question-box:hover h3,
+.question-box.active h3 { /* Inclut l'état actif */
+    color: white; 
+}
+
+.question-box:hover::before,
+.question-box.active::before { /* Inclut l'état actif */
+    width: 100%;
+}
+
+.faq.active .question-box svg {
+    transform: rotate(180deg);
+}
+
+.answer {
+    display: none;
+    background: white;
+    border: 2px solid #200258;
+    border-radius: 8px;
+    width: 100%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease-out;
+    margin-top: -2px;
+}
+
+.answer p {
+    line-height: 1.6;
+    font-size: 1rem;
+    color: black;
+    margin: 0;
+}
+
+.faq.active .answer {
+    display: block;
+    max-height: 500px;
+    opacity: 1;
+    padding-top: 1rem;
+}
+
+
+
+.title {
+    font-size: 3rem;
+    margin: 8rem 0rem;
+    text-align: center;
+    position: relative;
+    padding-top: 1.5rem;
+    padding-bottom: 5px;
+    color: black;
+    text-shadow: 0px  0px  10px   black,
+                 0px  0px  40px   black;
+}
+
+.title::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 2px;
+    background-color: #200258;
+}
+
+.titleP {
+    font-size: 3rem;
+    margin: 8rem 0rem;
+    text-align: center;
+    position: relative;
+    padding-top: 1.5rem;
+    padding-bottom: 5px;
+    color: black;
+    text-shadow: 0px  0px  10px   black,
+                 0px  0px  40px   black;
+}
+
+.titleP::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 2px;
+    background-color: #200258;
+}
+
+.faq.active .question-box svg {
+    transform: rotate(180deg);
+}
+
+svg {
+    transition: transform 0.3s ease-in-out, stroke 0.3s ease;
+}
+
+.body-connection {
+    background: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.home-connection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.connection-content {
+    max-width: 400px;
+    padding: 20px 25px;
+    background: white;
+    border: 2px solid #200258;
+    border-radius: 8px;
+    color: black;
+    text-align: center;
+}
+
+.connection-content h1 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.login-form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #200258;
+    border-radius: 4px;
+    background-color: #ededed;
+    color: black;
+}
+
+.login-form button {
+    padding: 10px;
+    background-color: #200258;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+    background-color: #200258;
+}
+
+.signup-link {
+    margin-top: 15px;
+    color: black;
+}
+
+.signup-link a {
+    color: #200258;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.body-offres {
+    background: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+}
+
+.section-faq .offres-container {
+    display: flex;
+    flex: 1;
+    justify-content: center; /* Centre les offres horizontalement */
+    align-items: stretch;   /* Aligne tous les éléments à la même hauteur */
+    gap: 75px;              /* Ajoute un espace entre les offres */
+    width: 100%;
+}
+
+h2.title{
+    margin-bottom: 90px;
+}
+
+h2.titleP{
+    margin-top: 50px;
+    margin-bottom: 90px;
+}
+
+/* Conteneur des offres */
+.offres-container {
+    display: flex;
+    justify-content: center; /* Centre les offres horizontalement */
+    align-items: stretch;   /* Aligne tous les éléments à la même hauteur */
+    gap: 75px;              /* Espace entre les offres */
+    width: 100%;
+    margin-top: 0px;
+    flex-wrap: wrap; /* Permet aux offres de se réorganiser sur plusieurs lignes */
+}
+
+/* Offres individuelles */
+.offre {
+    display: flex;
+    flex-direction: column; /* Aligne le contenu verticalement */
+    justify-content: space-between; /* Répartie l'espace */
+    width: 25%; /* Largeur de base */
+    min-width: 250px; /* Largeur minimale pour éviter que les boxes deviennent trop fines */
+    padding: 20px;
+    border: 2px solid #200258;
+    border-radius: 8px;
+    background-color: white;
+    text-align: center; /* Centre le texte */
+}
+
+/* Responsivité pour les écrans plus petits */
+@media (max-width: 1024px) {
+    .offres-container {
+        gap: 50px; /* Réduit l'espace entre les boxes sur les écrans plus petits */
+    }
+
+    .offre {
+        width: 100%; /* Réduit la largeur des boxes pour les écrans moyens */
+    }
+}
+
+@media (max-width: 768px) {
+    .offres-container {
+        gap: 20px; /* Réduit encore plus l'espace entre les boxes sur les petits écrans */
+    }
+
+    .offre {
+        width: 100%; /* Les boxes prennent toute la largeur sur les très petits écrans */
+        min-width: 100%; /* Garantit que la largeur ne descende pas sous 100% */
+    }
+
+    .header-offres {
+        background: rgba(26, 25, 21, 0.9)  !important; /* Même fond en mobile */
+    }
+}
+
+/* Ajustements pour le texte */
+.offre h2 {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+}
+
+.offre-content h1 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.btn-offre a {
+    margin-top: 30px;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    background: #200258;
+    border: 2px solid #200258;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    overflow: hidden;
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 1;
+}
+
+/* Boutons responsives */
+.btn-offre a:hover {
+    color: #200258;
+}
+
+.btn-offre a:hover::before {
+    width: 100%;
+}
+
+.offre h2 {
+    color: black;
+    font-size: 1.7rem;
+    margin-bottom: 30px; /* Ajoute un espace en bas du titre */
+}
+
+.offre-content h1 {
+    color: black;
+    font-size: 1.1rem;
+    margin: 10px 0; /* Ajoute un espacement vertical entre les paragraphes */
+}
+
+.offre-content p {
+    font-size: 1.1rem;
+    margin: 10px 0; /* Ajoute un espacement vertical entre les paragraphes */
+}
+
+.btn-offre a {
+
+    margin-top: 30px;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    background: #200258; /* Couleur de fond principale */
+    border: 2px solid #200258; /* Même couleur que le fond */
+    border-radius: 8px;
+    font-size: 16px;
+    color: white; /* Couleur du texte */
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    overflow: hidden;
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 1;
+}
+
+.btn-offre a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: white; /* Couleur d'animation */
+    z-index: -1; /* Passe sous le texte */
+    transition: width 0.5s ease;
+}
+
+.btn-offre a:hover {
+    color: #200258; /* Change la couleur du texte au survol */
+}
+
+.btn-offre a:hover::before {
+    width: 100%; /* Remplit le bouton au survol */
+}
+
+.btn-offre a:nth-child(2) {
+    background: transparent;
+    color: white;
+}
+
+.btn-offre a:nth-child(2)::before {
+    background: white;
+}
+
+.btn-offre a:nth-child(2):hover {
+    color: #1a1915;
+}
+
+.header-offres {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    padding: 50px 10% !important;
+    background: #200258  !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+
+
+
+/* Global Styles */
+body.body-explications {
+    background: #1a1915;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.explications-row, .explications-row.reverse {
+    display: flex;
+    align-items: stretch; /* Assure que toutes les boîtes ont la même hauteur */
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding: 20px;
+    background: white; /* Fond blanc */
+    border-radius: 10px;
+    border: solid #200258 2px;
+    height: 500px; /* Fixe la hauteur pour les deux lignes */
+    width: 1100px;
+}
+
+
+
+/* Texte gauche et droite */
+.explications-text-left h2, .explications-text-right h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #200258;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.explications-text-left h1, .explications-text-right h1 {
+    font-size: 23px;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.explications-text-left p, .explications-text-right p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.video-container, .image-container {
+    max-width: 600px; /* Limite la largeur maximale des conteneurs */
+    height: 100%; /* Prend toute la hauteur disponible de la ligne */
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex; /* Assure l'alignement du contenu */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    background: white; /* Fond uniforme */
+    box-sizing: border-box; /* Inclut padding dans la taille */
+}
+
+.video-container video, .image-container img {
+    border: 2px solid #200258;
+    border-radius: 8px;
+    display: block;
+    width: 100%; /* Rendre responsive */
+    height: 100%; /* Remplir le conteneur sans déformer */
+    object-fit: cover; /* Remplir l'espace sans déformer l'image/vidéo */
+}
+
+.explications-text-right{
+    margin-right: 100px;
+}
+
+.video-container{
+    margin-left: 180px;
+}
+
+
+/* Style du footer des réseaux sociaux */
+.offres-home-sci {
+    position: relative; /* Normalement positionné dans le flux du document */
+    width: 100%; /* S'assure qu'il prend toute la largeur de la page */
+    display: flex;
+    justify-content: center; /* Centre les icônes */
+    padding: 10px 0; /* Espacement autour des icônes */
+    background: white; /* Fond sombre du footer */
+    z-index: 10; /* Assure qu'il n'est pas couvert par d'autres éléments */
+    margin-top: 50px; /* Un petit espace avant de pousser le footer tout en bas */
+    gap: 15px;
+}
+
+/* Style des icônes de réseaux sociaux */
+.offres-home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #200258;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #200258;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.offres-home-sci a:hover {
+    color: white;
+}
+
+.offres-home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #200258;
+    z-index: -1;
+    transition: .5s;
+}
+
+.offres-home-sci a:hover::before {
+    width: 100%;
+}
+
+
+.video-container video {
+    border: 1px solid #200258 !important;
+    border-radius: 8px;
+    max-width: 100%; /* Responsive */
+    max-height: 100%; /* Ne dépasse pas le conteneur */
+    display: block;
+}
+
+.image-container img {
+    border: 1px solid #200258;
+    border-radius: 8px;
+    max-width: 100%; /* Responsive */
+    max-height: 100%; /* Ne dépasse pas le conteneur */
+    display: block;
+}
+
+/* Responsivité */
+@media (max-width: 1400px) {
+    .explications-row {
+        flex-direction: column; /* Empile les éléments en colonne */
+        gap: 20px;
+    }
+
+    .video-container, .image-container, .explications-text-left, .explications-text-right {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .explications-text-right{
+        margin-right: 10px;
+    }
+
+    .video-container{
+        margin-left: 70px;
+        height: 60%;
+        width: 60%;
+    }
+
+    .explications-row, .explications-row.reverse {
+        height: 100%;
+        width: 100%;
+    }
+}

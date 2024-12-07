@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - LAVISION</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body class="body-connection">
+    <header class="header">
+        <a href="accueil.html" class="logo">
+            <img src="images/loogoPC.png" alt="LaVision Logo">
+        </a>
+
+        <nav class="navbar">
+            <a href="accueil.html">Accueil</a>
+            <a href="faq.html">FAQ</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzGUuISCKBw5F8uy_-P6ldbWH5yEA03ZLblX9uHS0o-G8h8w/viewform">Demmande</a>
+            <a href="offres.html">Offres</a>
+            <a href="connection.html" class="active">Connexion</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="burger-menu" onclick="toggleMenu()">
+            <i class='bx bx-menu'></i>
+        </div>
+    </header>
+
+    <section class="home-connection">
+        <div class="connection-content">
+            <h1>Connexion à LAVISION</h1>
+            <form id="login-form" class="login-form" action="#" method="POST">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Se connecter</button>
+            </form>
+            <p class="signup-link">Pas de compte ? <a href="https://rebrand.ly/payment_lavision">Inscrivez-vous ici</a>.</p>
+        </div>
+    </section>
+
+    <div class="home-sci">
+        <a href="#"><i class='bx bxl-telegram'></i></a>
+        <a href="#"><i class='bx bxl-twitter'></i></a>
+        <a href="#"><i class='bx bxl-discord'></i></a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
