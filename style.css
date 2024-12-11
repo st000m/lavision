@@ -177,7 +177,7 @@ body {
     }
 
     .home-content, .home-sci {
-        position: relative;
+        position: relative !important;
         z-index: 2;
     }
 
