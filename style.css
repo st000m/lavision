@@ -26,7 +26,6 @@ body {
     background-color: #200258;
 }
 
-
 .logo img {
     width: 200px; /* Adjust the width as needed */
     height: auto;
@@ -38,8 +37,6 @@ body {
     display: inline-block;
     text-decoration: none;
 }
-
-
 
 .navbar a {
     font-size: 22px;
@@ -62,6 +59,20 @@ body {
     color: black;
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 1400px) {
     .burger-menu {
@@ -182,7 +193,14 @@ body {
     }
 
     .home-sci {
-        align-items: center;
+        position: relative; /* Normalement positionné dans le flux du document */
+        width: 100%; /* S'assure qu'il prend toute la largeur de la page */
+        display: flex;
+        justify-content: center; /* Centre les icônes */
+        padding: 10px 0; /* Espacement autour des icônes */
+        z-index: 10; /* Assure qu'il n'est pas couvert par d'autres éléments */
+        margin-top: 100px; /* Un petit espace avant de pousser le footer tout en bas */
+        gap: 15px;
     }
 
     .home-content {
@@ -235,14 +253,36 @@ body {
     }
 }
 
+
+
+
+.section-faq {
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;  /* Ajoute un peu d'espace en bas pour ne pas que le contenu soit collé au bas */
+}
+
+
+
+
+
+
+
 .home {
-    height: 100vh;
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
     background: url(images/a.png) no-repeat; 
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     padding: 0 10%;
+    padding-bottom: 40px;
 }
 
 .home-content {
@@ -259,9 +299,6 @@ body {
                  0px  0px  40px   black;
 }
 
-
-
-
 .home-content h3 {
     margin-top: 2.5rem;
     position: relative;
@@ -269,8 +306,6 @@ body {
     font-weight: 700;
     color: #200258;
 }
-
-
 
 .home-content p {
     margin-top: 2rem;
@@ -280,8 +315,6 @@ body {
     color: black;
 }
 
-
-
 .home-content .btn-box {
     position: relative;
     display: flex;
@@ -289,8 +322,6 @@ body {
     width: 345px;
     height: 50px;
 }
-
-
 
 /* Styles généraux pour les boutons */
 .btn-box a {
@@ -335,15 +366,6 @@ body {
 .btn-box a:hover::before {
     width: 100%;
 }
-
-
-
-
-
-
-
-
-
 
 .home-content .btn-box2 {
     position: relative;
