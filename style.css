@@ -154,7 +154,7 @@ body {
 
     .logo img {
         content: url('images/logoTEL.png'); /* Remplacer l'image par 'logoTEL.png' pour les petits écrans */
-        width: 90px; /* Ajuste la taille si nécessaire */
+        width: 80px; /* Ajuste la taille si nécessaire */
         height: auto;
     }
     
