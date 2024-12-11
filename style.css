@@ -252,6 +252,11 @@ body {
         width: 50% !important; /* Les offres prendront 45% de la largeur, donc deux offres sur une ligne */
         margin-bottom: 30px !important; /* Ajoute un espace en bas des offres */
     }
+
+    .home-connection{
+        padding: 30px;
+        margin-top: 120px;
+    }
 }
 
 
@@ -727,6 +732,7 @@ svg {
     align-items: center;
     justify-content: center;
     width: 100%;
+    flex-direction: column;
 }
 
 .connection-content {
